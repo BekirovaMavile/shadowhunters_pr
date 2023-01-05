@@ -37,9 +37,9 @@
         <div class="collapse navbar-collapse" id="navbarCollapse9">
           <div class="navbar-nav">
             <a href="/" class="nav-item nav-link active">Конклав</a>
-            <% menu.forEach(function(hunter){ %>
+            <% if(typeof nav == 'object' && nav){ nav.forEach(function(hunter){ %>
 <a class="nav-item nav-link" href="/hunters/<%=hunter.nick%>"><%=hunter.title%></a>
-            <% }) %>
+            <% })} %>
             <!-- <a href="/hunters/clary" class="nav-item nav-link">Клэри</a>
             <a href="/hunters/jace" class="nav-item nav-link">Джейс</a>
             <a href="/hunters/alec" class="nav-item nav-link">Алек</a>
