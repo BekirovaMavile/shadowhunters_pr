@@ -2,10 +2,10 @@ var express = require('express');
 var router = express.Router();
 var Hunter = require("../models/hunter").Hunter
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('Новый маршрутизатор, для маршрутов, начинающихся с hunters');
-});
+// /* GET users listing. */
+// router.get('/', function(req, res, next) {
+//   res.send('Новый маршрутизатор, для маршрутов, начинающихся с hunters');
+// });
 
 /* Страница охотников */
 router.get("/:nick", function(req, res, next){
