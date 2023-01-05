@@ -3,6 +3,7 @@ var router = express.Router();
 var Hunter = require("../models/hunter").Hunter
 var User = require("./../models/user").User
 
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
     req.session.greeting = "Hi!!!"

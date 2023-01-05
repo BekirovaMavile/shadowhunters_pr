@@ -2,14 +2,14 @@ var express = require('express');
 var router = express.Router();
 var Hunter = require("../models/hunter").Hunter
 var async = require("async")
-
+var checkAuth = require("../middleware/checkAuth.js")
 // /* GET users listing. */
 // router.get('/', function(req, res, next) {
 //   res.send('Новый маршрутизатор, для маршрутов, начинающихся с hunters');
 // });
 
 /* Страница охотников */
-router.get("/:nick", function(req, res, next){
+router.get("/:nick", checkAuth, function(req, res, next){
     // async.parallel([
     //     function(callback){
     //         Hunter.findOne({nick: req.params.nick},callback)
