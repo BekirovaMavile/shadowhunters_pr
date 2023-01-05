@@ -38,6 +38,12 @@ User.findOne({username:username},function(err,user){
     })
 });
 
+/* POST logout. */
+router.post('/logout', function(req, res, next) {
+    req.session.destroy()
+    res.locals.user = null
+    res.redirect('/')
+});
 
 
 // /* Страница Клариссы */
