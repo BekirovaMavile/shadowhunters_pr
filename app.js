@@ -6,6 +6,7 @@ var logger = require('morgan');
 var mongoose = require('mongoose')
 mongoose.set('strictQuery', true);
 mongoose.connect('mongodb://localhost:27017/hunters')
+var session = require("express-session")
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -23,6 +24,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(session({
+    secret: "Shadowhunters",
+    cookie:{maxAge:60*1000},
+    resave: true,
+    saveUninitialized: true	
+}))
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
