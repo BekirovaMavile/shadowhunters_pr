@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Hunter = require("../models/hunter").Hunter
-var async = require("async")
+// var async = require("async")
 
 // /* GET users listing. */
 // router.get('/', function(req, res, next) {
