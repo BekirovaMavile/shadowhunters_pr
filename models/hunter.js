@@ -16,4 +16,4 @@ type:Date,
 default:Date.now
 }
 })
-module.exports.Hunter = mongoose.model("Hunter", hunterSchema)
+module.exports.Hunter = mongoose.model("hunter", hunterSchema)
