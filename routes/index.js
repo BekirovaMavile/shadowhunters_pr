@@ -8,6 +8,12 @@ router.get('/', function(req, res, next) {
     res.render('index', { title: 'Сумеречные охотники', counter:req.session.counter });
 });
 
+/* GET login/registration page. */
+router.get('/logreg', function(req, res, next) {
+res.render('logreg', {title: 'Вход'});
+});
+
+
 // /* Страница Клариссы */
 // router.get('/clary', function(req, res, next) {
 //     res.render('hunter', {
