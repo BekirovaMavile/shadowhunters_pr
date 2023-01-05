@@ -15,6 +15,7 @@
       integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
       crossorigin="anonymous"
     ></script>
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon"/>
   </head>
   <body>
     <nav
@@ -36,11 +37,14 @@
         <div class="collapse navbar-collapse" id="navbarCollapse9">
           <div class="navbar-nav">
             <a href="/" class="nav-item nav-link active">Конклав</a>
-            <a href="/hunters/clary" class="nav-item nav-link">Клэри</a>
+            <% menu.forEach(function(hunter){ %>
+<a class="nav-item nav-link" href="/hunters/<%=hunter.nick%>"><%=hunter.title%></a>
+            <% }) %>
+            <!-- <a href="/hunters/clary" class="nav-item nav-link">Клэри</a>
             <a href="/hunters/jace" class="nav-item nav-link">Джейс</a>
             <a href="/hunters/alec" class="nav-item nav-link">Алек</a>
             <a href="/hunters/magnus" class="nav-item nav-link">Магнус</a>
-            <a href="/hunters/isabel" class="nav-item nav-link">Изабель</a>
+            <a href="/hunters/isabel" class="nav-item nav-link">Изабель</a> -->
           </div>
           <div class="navbar-nav ms-auto">
             <a href="#" class="nav-item nav-link">Login</a>
