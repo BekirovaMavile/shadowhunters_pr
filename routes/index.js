@@ -6,7 +6,7 @@ var Hunter = require("../models/hunter").Hunter
 router.get('/', function(req, res, next) {
 Hunter.find({},{_id:0,title:1,nick:1},function(err,menu){
     req.session.greeting = "Hi!!!"
-    res.render('index', { title: 'Сумеречные охотники', menu: menu });
+    res.render('index', { title: 'Сумеречные охотники', menu: menu, counter:req.session.counter });
 });
 });
 
