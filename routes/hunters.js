@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var db = require('../mySQLConnect.js');
 // var Hunter = require("../models/hunter").Hunter
-// var checkAuth = require("../middleware/checkAuth.js")
+var checkAuth = require("../middleware/checkAuth.js")
 
 /* GET hunters listing. */
 router.get('/', function(req, res, next) {
@@ -11,7 +11,7 @@ res.send('<h1>Это экран для списка охотников</h1>');
 
 
 /* Страница охотников */
-router.get("/:nick", function(req, res, next){
+router.get("/:nick", checkAuth, function(req, res, next){
     db.query(`SELECT * FROM hunter WHERE hunter.nick = '${req.params.nick}'`, (err, hunters) => {             
         if(err) {
             console.log(err);

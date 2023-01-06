@@ -54,7 +54,7 @@
             <a href="/hunters/isabel" class="nav-item nav-link">Изабель</a> -->
           </div>
           <div class="nav navbar-nav navbar-right ms-auto">
-            <%if(user){%>
+            <%if(user.length > 0){%>
             <form action="/logout" method="post">
               <button type="submit" class="av-item nav-link">Выйти</button>
             </form>
